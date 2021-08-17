@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href=
+        "https://fonts.googleapis.com/css?family=Poppins">
+        <link href="style.css" rel="stylesheet">
+        <title>Vue JS ToDo List</title>
+    </head>
+    <body>
+        <div class="container" id="app">
+            <h2 style="text-align: center">ToDo App</h2>
+            <input type="text" v-model="todo" id="name" class="input" placeholder="Please enter your ToDo" />
+            <h4 v-if="isError==true">Please insert a value</h4>
+            <input type="button" value="Add" id="btnClick" class="btn" 
+            @click="storeToDo"/>
+            <!-- <span id="error"></span> -->
+            <h3 style="padding-left: 10px;">ToDo List</h3>
+            <hr size="1" width="100%" color="white" />
+            <ul id="box">
+                <li v-for="(todo in todos">
+                    {{ todo }}
+
+                    <button @click="deleteToDo(index)" class="remove">Remove</button>
+                </li>
+            </ul>
+        </div>
+
+        <script src="Vue JS/vue.js"></script>
+        <script src="scripts.js"></script>
+    </body>
+</html>
